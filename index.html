@@ -3,259 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>店舗様向け ご提案資料</title>
+    <title>店舗向けご提案資料</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --main-navy: #1a2a40;
-            --accent-red: #e63946;
-            --bg-white: #ffffff;
-            --soft-gray: #f8f9fa;
-            --text-gray: #333333;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background-color: var(--main-navy);
-            color: var(--text-gray);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        /* 16:9 のコンテナ設定 */
-        .slide-container {
-            width: 1280px;
-            height: 720px;
-            background-color: var(--bg-white);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            background-color: var(--main-navy);
-            color: white;
-            padding: 20px 40px;
-            border-bottom: 4px solid var(--accent-red);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 2px;
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            grid-gap: 20px;
-            padding: 30px;
-            flex-grow: 1;
-        }
-
-        /* 左側：前提データ */
-        .left-column {
-            background-color: var(--soft-gray);
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 8px solid var(--main-navy);
-        }
-
-        /* 右側：コストとシミュレーション */
-        .right-column {
-            display: grid;
-            grid-template-rows: auto 1fr;
-            grid-gap: 20px;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--main-navy);
-            margin-bottom: 15px;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-
-        .section-title::before {
-            content: "";
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-red);
-            margin-right: 10px;
-        }
-
-        h2 { font-size: 1.2em; margin-top: 0; }
-        p { line-height: 1.6; font-size: 14px; margin: 8px 0; }
-        ul { padding-left: 20px; margin: 10px 0; }
-        li { margin-bottom: 5px; font-size: 14px; }
-
-        .highlight-red { color: var(--accent-red); font-weight: bold; }
-        .font-large { font-size: 18px; }
-
-        /* カードデザイン */
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-        }
-
-        /* テーブルスタイル */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th {
-            background-color: var(--main-navy);
-            color: white;
-            font-size: 13px;
-            padding: 8px;
-        }
-
-        td {
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-            font-size: 14px;
-        }
-
-        .profit { color: var(--accent-red); font-weight: bold; }
-
-        .footer-note {
-            font-size: 11px;
-            color: #777;
-            margin-top: 10px;
-            line-height: 1.4;
-        }
-
-        .emphasis-box {
-            background: #fff0f0;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 15px;
-            font-weight: bold;
-            text-align: center;
-            border: 1px dashed var(--accent-red);
-        }
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; background-color: #f3f4f6; }
+        .bg-custom-blue { background-color: #1a365d; }
+        .text-custom-blue { color: #1a365d; }
+        .border-custom-blue { border-color: #1a365d; }
+        .bg-light-blue { background-color: #f0f7ff; }
+        .bg-light-red { background-color: #fff5f5; }
     </style>
 </head>
-<body>
+<body class="p-4 md:p-8">
 
-<div class="slide-container">
-    <header>
-        <h1>店舗様向け ご提案資料</h1>
-    </header>
-
-    <div class="main-content">
-        <div class="left-column">
-            <div class="section-title">① 現在のリーチ力（前提データ）</div>
-            <p>お店の魅力を全力で届けるための、現在の発信力です。</p>
-            
-            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                <div style="width: 48%;">
-                    <strong>■ Instagram</strong><br>
-                    フォロワー：約1,000人<br>
-                    1投稿リーチ：<span class="highlight-red">500〜1,000</span>
-                </div>
-                <div style="width: 48%;">
-                    <strong>■ TikTok</strong><br>
-                    フォロワー：約50人<br>
-                    1投稿リーチ：<span class="highlight-red">1,000以上</span>
-                </div>
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden border border-gray-200">
+        
+        <header class="bg-custom-blue text-white p-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-file-invoice-dollar text-2xl"></i>
+                <h1 class="text-xl font-bold tracking-wider">店舗様向け ご提案資料</h1>
             </div>
+            <span class="text-sm">SNS PR施策のご提案</span>
+        </header>
 
-            <p class="font-large">合計想定リーチ数：<strong>1,500〜2,000人</strong></p>
-            <p style="font-size: 12px; color: #666;">※数値に不安がある場合は、実際のインサイトデータを提示いたします。</p>
-
-            <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px 0;">
-
-            <p><strong>【来店予測】</strong></p>
-            <p>SNSマーケティングの一般的な指標に基づき、<br>
-                「行ってみたい」層（1〜3%）の中から、<br>
-                実際に来店される方を<span class="highlight-red">約0.1〜0.3％</span>と見込んでいます。</p>
+        <div class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            <div class="emphasis-box">
-                2〜6名程度の新規来店を想定
-            </div>
-            
-            <p class="footer-note">
-                ※算出根拠：SNSマーケティングにおける一般的な行動指標（投稿閲覧 → 興味形成 → 実行動）を参考に、堅実な数値を設定しております。
-            </p>
-        </div>
-
-        <div class="right-column">
-            <div class="card">
-                <div class="section-title">② 店舗様のご負担コスト</div>
-                <p>お店に寄り添い、最小限のご負担で最大の結果を目指します。</p>
-                <ul>
-                    <li><strong>原価負担（2名来店）：</strong> 2,400円 <br>
-                        <small>（客単価4,000円・原価30%想定：1,200円×2名）</small></li>
-                    <li><strong>有償PR謝礼：</strong> 2,000〜5,000円</li>
-                </ul>
-                <div style="text-align: right; border-top: 1px solid #eee; padding-top: 10px;">
-                    <span style="font-size: 18px;">総コスト：</span>
-                    <span class="highlight-red" style="font-size: 24px;">4,400 〜 7,400円</span>
+            <section class="space-y-6">
+                <div class="flex items-center gap-3 border-b-2 border-custom-blue pb-2">
+                    <span class="bg-custom-blue text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">01</span>
+                    <h2 class="text-xl font-bold text-custom-blue">前提データ（現在）</h2>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="section-title">③ PR後の売上シミュレーション</div>
-                <p>客単価4,000円にて試算。<strong>3名以上の来店で黒字化</strong>する設計です。</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>新規来店数</th>
-                            <th>売上予測</th>
-                            <th>収支シミュレーション</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2名</td>
-                            <td>8,000円</td>
-                            <td><span class="profit">+600〜3,600円</span> (回収)</td>
-                        </tr>
-                        <tr>
-                            <td>3名</td>
-                            <td>12,000円</td>
-                            <td><span class="profit">+4,600〜7,600円</span></td>
-                        </tr>
-                        <tr>
-                            <td>4名</td>
-                            <td>16,000円</td>
-                            <td><span class="profit">+8,600〜11,600円</span></td>
-                        </tr>
-                        <tr>
-                            <td>5名</td>
-                            <td>20,000円</td>
-                            <td><span class="profit">+12,600〜15,600円</span></td>
-                        </tr>
-                        <tr>
-                            <td>6名</td>
-                            <td>24,000円</td>
-                            <td><span class="profit">+16,600〜19,600円</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="footer-note" style="margin-top: 15px;">
-                    謝礼を含め、2名で回収、3〜4名で十分な利益が出る設計です。上限の5〜6名来店時には、非常に高い費用対効果が期待できます。
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="border rounded-xl p-4 bg-white shadow-sm">
+                        <div class="flex items-center gap-2 mb-2 text-pink-600">
+                            <i class="fab fa-instagram text-xl"></i>
+                            <span class="font-bold">Instagram</span>
+                        </div>
+                        <p class="text-xs text-gray-500">フォロワー：約1,000人</p>
+                        <p class="text-xs font-bold mt-2">1投稿リーチ：</p>
+                        <p class="text-xl font-black italic">500〜1,000</p>
+                    </div>
+                    <div class="border rounded-xl p-4 bg-white shadow-sm">
+                        <div class="flex items-center gap-2 mb-2 text-black">
+                            <i class="fab fa-tiktok text-xl"></i>
+                            <span class="font-bold">TikTok</span>
+                        </div>
+                        <p class="text-xs text-gray-500">フォロワー：約50人</p>
+                        <p class="text-xs font-bold mt-2">1投稿リーチ：</p>
+                        <p class="text-xl font-black italic">1,000以上</p>
+                    </div>
+                </div>
+
+                <div class="bg-light-blue rounded-xl p-6 text-center border border-blue-100">
+                    <p class="text-custom-blue font-bold mb-2">合計想定リーチ数</p>
+                    <div class="text-4xl font-black text-custom-blue italic">
+                        1,500〜2,000 <span class="text-lg italic ml-1">人</span>
+                    </div>
+                </div>
+
+                <div class="text-xs text-gray-600 leading-relaxed px-2">
+                    投稿を見た方のうち、「行ってみたい」と感じる層は約1〜3%、<br>
+                    実際に来店に至る割合は<span class="text-red-500 font-bold underline">約0.1〜0.3%</span>と想定しています。
+                </div>
+
+                <div class="border-2 border-red-100 rounded-xl p-6 text-center bg-white relative">
+                    <p class="text-sm font-bold text-orange-800">想定新規来店数</p>
+                    <div class="text-5xl font-black text-red-500 italic mt-1">
+                        2〜6 <span class="text-2xl ml-1">名</span>
+                    </div>
+                </div>
+                
+                <p class="text-[10px] text-gray-400">
+                    ※SNSマーケティングの一般的指標（閲覧→興味→行動）を参考に算出。<br>
+                    ※リーチ数がご不安な際は詳細データを提出いたします。
                 </p>
+            </section>
+
+            <div class="space-y-8">
+                
+                <section class="space-y-4">
+                    <div class="flex items-center gap-3 border-b-2 border-custom-blue pb-2">
+                        <span class="bg-custom-blue text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">02</span>
+                        <h2 class="text-xl font-bold text-custom-blue">店舗側コスト</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 text-sm px-2">
+                        <div class="space-y-3">
+                            <p class="flex items-center gap-2"><i class="fas fa-check text-custom-blue"></i> PR訪問人数：2名（同伴1名）</p>
+                            <p class="flex items-center gap-2"><i class="fas fa-check text-custom-blue"></i> 謝礼金額：2,000〜5,000円</p>
+                            <p class="flex items-center gap-2"><i class="fas fa-check text-custom-blue"></i> 原価想定：1,200円/人</p>
+                            <p class="text-[10px] text-gray-400 ml-6">（客単価4,000円 原価30%試算）</p>
+                        </div>
+                        <div class="text-right space-y-3">
+                            <p>原価負担(2名) <span class="ml-4 font-mono">2,400円</span></p>
+                            <p>有償PR謝礼 <span class="ml-4 font-mono text-red-500 font-bold">2,000〜5,000円</span></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-light-red rounded-xl p-4 flex justify-between items-center border border-red-100">
+                        <span class="text-lg font-bold text-gray-700 italic">総コスト</span>
+                        <span class="text-3xl font-black text-red-500 italic">4,400〜7,400円</span>
+                    </div>
+                </section>
+
+                <section class="space-y-4">
+                    <div class="flex items-center gap-3 border-b-2 border-custom-blue pb-2">
+                        <span class="bg-custom-blue text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">03</span>
+                        <h2 class="text-xl font-bold text-custom-blue italic">PR後の来店・売上シミュレーション</h2>
+                        <span class="text-[10px] text-gray-400 font-normal ml-auto">（客単価4,000円試算）</span>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-grow overflow-hidden rounded-lg">
+                            <table class="w-full text-center text-sm border-collapse">
+                                <thead class="bg-custom-blue text-white">
+                                    <tr>
+                                        <th class="py-2 border-r border-blue-800">来店人数</th>
+                                        <th class="py-2 border-r border-blue-800">売上</th>
+                                        <th class="py-2">売上 - 総コスト = 利益</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white">
+                                    <tr class="border-b">
+                                        <td class="py-2 font-bold border-r">2名</td>
+                                        <td class="py-2 border-r">8,000円</td>
+                                        <td class="py-2 text-blue-600 font-bold bg-blue-50">+600〜+3,600円 <span class="text-[10px] font-normal border border-blue-400 px-1 rounded">回収</span></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-2 font-bold border-r">3名</td>
+                                        <td class="py-2 border-r">12,000円</td>
+                                        <td class="py-2 text-red-500 font-bold">+4,600〜+7,600円</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-2 font-bold border-r">4名</td>
+                                        <td class="py-2 border-r">16,000円</td>
+                                        <td class="py-2 text-red-500 font-bold">+8,600〜+11,600円</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-2 font-bold border-r">5名</td>
+                                        <td class="py-2 border-r">20,000円</td>
+                                        <td class="py-2 text-red-500 font-bold">+12,600〜+15,600円</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="py-2 font-bold border-r">6名</td>
+                                        <td class="py-2 border-r">24,000円</td>
+                                        <td class="py-2 text-red-500 font-bold">+16,600〜+19,600円</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-light-blue p-4 rounded-xl border border-blue-100 md:w-48 text-xs leading-relaxed">
+                            <p class="mb-2"><span class="font-bold text-custom-blue">2名来店</span>でコスト回収ラインに到達します。</p>
+                            <p>想定上限の<span class="text-red-500 font-bold">5〜6名来店時</span>には、投下コストに対して高い費用対効果が期待できます。</p>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </div>
     </div>
-</div>
 
 </body>
 </html>
