@@ -24,7 +24,7 @@
             max-width: 430px; 
             height: 100vh;
             background-color: white;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            /* コンテナ全体の影も削除したい場合はここを削除してください。今回は要素内の影を優先して削除しています */
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -34,16 +34,16 @@
         .bg-light-blue { background-color: #f0f7ff; }
         .bg-light-red { background-color: #fff8f8; }
         
-        /* ヘッダーのレイアウト修正 */
+        /* ヘッダーのレイアウト */
         .header-container {
             position: relative;
-            background-color: transparent; /* 背景は子要素で制御 */
+            background-color: transparent; 
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             padding: 0;
             overflow: visible;
-            height: 36px; /* ラインを細く設定 */
+            height: 36px; 
         }
 
         .header-left-bar {
@@ -53,20 +53,17 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            height: 100%; /* 36px */
+            height: 100%; 
             flex-grow: 1;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        /* 右側：正方形に近いボックスが下に突き出る */
         .header-right-box {
             background-color: #1e3a8a;
             width: 80px;
-            height: 80px; /* ここだけ大きくして四角形に */
+            height: 80px; 
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: -2px 4px 8px rgba(0,0,0,0.15);
             border-bottom-left-radius: 4px;
             border-bottom-right-radius: 4px;
             z-index: 10;
@@ -101,8 +98,8 @@
             text-align: center;
             letter-spacing: 0.02em;
             width: 100%;
-            margin-top: 0.75rem;
-            padding-bottom: 1.5rem;
+            margin-top: 2rem;
+            padding-bottom: 2rem;
             white-space: nowrap;
         }
 
@@ -129,7 +126,7 @@
             </div>
         </header>
 
-        <div class="flex-1 p-4 flex flex-col gap-4 overflow-hidden overflow-y-auto pt-8">
+        <div class="flex-1 p-4 flex flex-col gap-4 overflow-hidden overflow-y-auto pt-8 pb-12">
             
             <div class="flex flex-col gap-2 shrink-0">
                 <div class="flex items-center gap-2 border-b-2 border-custom-blue pb-0.5 mb-1">
@@ -138,7 +135,8 @@
                 </div>
 
                 <div class="grid grid-cols-2 gap-2">
-                    <div class="border rounded-lg p-2 bg-white shadow-sm border-slate-100">
+                    <!-- shadow-smを削除 -->
+                    <div class="border rounded-lg p-2 bg-white border-slate-100">
                         <div class="flex items-center gap-1 mb-0.5 text-pink-600">
                             <i class="fab fa-instagram text-xs"></i>
                             <span class="font-bold text-[9px]">Instagram</span>
@@ -148,7 +146,8 @@
                         <p class="text-[12px] font-black text-slate-800 leading-none">500〜1,000</p>
                         <p class="text-[7px] text-slate-400 mt-0.5">※投稿後10日目で測定</p>
                     </div>
-                    <div class="border rounded-lg p-2 bg-white shadow-sm border-slate-100">
+                    <!-- shadow-smを削除 -->
+                    <div class="border rounded-lg p-2 bg-white border-slate-100">
                         <div class="flex items-center gap-1 mb-0.5 text-slate-900">
                             <i class="fab fa-tiktok text-xs"></i>
                             <span class="font-bold text-[9px]">TikTok</span>
@@ -160,7 +159,8 @@
                     </div>
                 </div>
 
-                <div class="bg-light-blue rounded-lg py-2 text-center border border-blue-100 shadow-sm my-1">
+                <!-- shadow-smを削除 -->
+                <div class="bg-light-blue rounded-lg py-2 text-center border border-blue-100 my-1">
                     <p class="text-custom-blue font-bold text-[9px]">合計想定リーチ数</p>
                     <div class="text-2xl font-black text-custom-blue py-0.5">
                         1,500&emsp;〜&emsp;2,000 <span class="text-xs">人</span>
@@ -172,7 +172,8 @@
                     実際に来店に至る割合は<span class="text-red-500 font-bold border-b border-red-200">約0.1〜0.3%</span>と想定。
                 </div>
 
-                <div class="border-2 border-red-50 rounded-lg py-2.5 text-center bg-white shadow-inner">
+                <!-- shadow-smおよびshadow-innerを削除 -->
+                <div class="border-2 border-red-50 rounded-lg py-2.5 text-center bg-light-red">
                     <p class="text-[10px] font-bold text-orange-900">PR後 想定来店数</p>
                     <div class="text-3xl font-black text-red-500 leading-none mt-1">2〜6 <span class="text-lg">名</span></div>
                 </div>
@@ -203,7 +204,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-light-red rounded-lg p-2 flex justify-between items-center border border-red-100 shadow-sm">
+                <!-- shadow-smを削除 -->
+                <div class="bg-light-red rounded-lg p-2 flex justify-between items-center border border-red-100">
                     <span class="text-[10px] font-black text-slate-800">総コスト</span>
                     <span class="text-lg font-black text-red-500">4,400〜7,400円</span>
                 </div>
@@ -256,7 +258,8 @@
                     </table>
                 </div>
 
-                <div class="bg-light-blue p-2.5 rounded-lg border border-blue-100 text-[8.5px] leading-relaxed shadow-sm">
+                <!-- shadow-smを削除 -->
+                <div class="bg-light-blue p-2.5 rounded-lg border border-blue-100 text-[8.5px] leading-relaxed">
                     <p class="mb-0.5">・PR後想定来店数を基に2名の来店でコストを回収、黒字化となる想定で試算しております。</p>
                     <p>・想定上限の6名来店時は、投下コストに対し高い費用対効果が期待出来る見込みです。</p>
                 </div>
