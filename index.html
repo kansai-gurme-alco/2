@@ -135,6 +135,15 @@
             line-height: 1.6;
         }
 
+        /* 省略記号のデザイン */
+        .dot-line {
+            line-height: 0.8;
+            padding: 2px 0;
+            color: #cbd5e1;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
         @media print {
             body { background-color: white; }
             .slide-container { box-shadow: none; height: auto; overflow: visible; }
@@ -203,11 +212,11 @@
                 <div class="text-[9px] px-1 mb-1">
                     <p class="font-black text-slate-800 mb-1">■PR後 想定来店数の算出について</p>
                     <p class="text-slate-600 leading-tight">
-                        投稿を見た方のうち、「行ってみたい」と感じる層は約1〜3%、<br>
-                        実際に来店に至る割合は<span class="text-red-500 font-bold border-b border-red-200">約0.1〜0.3%</span>と想定。
+                        投稿を見た方のうち、「行ってみたい」と感じるユーザーは約1〜3%、<br>
+                        実際に来店に至るユーザーの割合は<span class="text-red-500 font-bold border-b border-red-200">約0.1〜0.3%</span>と想定。
                     </p>
                     <div class="mt-2 space-y-0.5">
-                        <p class="text-[8px] text-slate-500 font-bold leading-tight">※SNSマーケティングの一般的指標（閲覧→興味→行動）を参考に算出しております。</p>
+                        <p class="text-[8px] text-slate-500 font-bold leading-tight">※SNSマーケティングの一般的指標（閲覧 → 興味 → 行動）を参考に算出しております。</p>
                         <p class="text-[8px] text-slate-500 font-bold leading-tight">※リーチ数がご不安な際は詳細データを提出いたします。</p>
                     </div>
                 </div>
@@ -227,8 +236,11 @@
                 <div class="bg-white border border-slate-100 rounded-lg p-3 shadow-sm">
                     <div class="flex flex-col gap-3">
                         <div class="space-y-1 text-[9px] text-slate-700 font-medium">
-                            <p><i class="fas fa-users text-custom-blue mr-1 w-3"></i> 訪問人数：2名（同伴1名希望）</p>
-                            <p><i class="fas fa-utensils text-custom-blue mr-1 w-3"></i> 原価想定：1,200円/人 <span class="text-[7px] text-slate-400">（単価4,000円×原価30%）</span></p>
+                            <p class="flex items-center justify-between">
+                                <span><i class="fas fa-users text-custom-blue mr-1 w-3"></i> 訪問人数：2名（同伴1名希望）</span>
+                                <span class="font-bold text-slate-800">有償PR：1,000円～3,000円</span>
+                            </p>
+                            <p><i class="fas fa-utensils text-custom-blue mr-1 w-3"></i> 原価想定：1,200円/人 <span class="text-[7px] text-slate-400">（客単価4,000円×原価30%）</span></p>
                         </div>
 
                         <div class="border-t border-dashed border-slate-200 pt-2 px-1">
@@ -275,7 +287,7 @@
                                 <td class="border-r font-black">4,000円</td>
                                 <td class="text-left pl-2">
                                     <span class="profit-value font-black text-slate-800"><span class="text-red-500">-1,400</span>&emsp;〜&emsp;<span class="text-blue-600">+600円</span></span>
-                                    <span class="text-[7px] border border-slate-800 px-0.5 rounded font-bold align-middle whitespace-nowrap">謝礼1000円で回収ライン</span>
+                                    <span class="text-[7px] border border-slate-800 px-0.5 rounded font-bold align-middle whitespace-nowrap">有償1000円で回収ライン</span>
                                 </td>
                             </tr>
                             <tr class="border-b border-slate-100 text-center">
@@ -285,17 +297,9 @@
                                     <span class="profit-value font-black text-blue-600">+2,600&emsp;〜&emsp;+4,600円</span>
                                 </td>
                             </tr>
-                            <tr class="border-b border-slate-100 text-blue-600 font-black text-center">
-                                <td class="border-r text-slate-800 font-bold">3名</td><td class="border-r text-slate-800">12,000円</td>
-                                <td class="text-left pl-2"><span class="profit-value">+6,600&emsp;〜&emsp;+8,600円</span></td>
-                            </tr>
-                            <tr class="border-b border-slate-100 text-blue-600 font-black text-center">
-                                <td class="border-r text-slate-800 font-bold">4名</td><td class="border-r text-slate-800">16,000円</td>
-                                <td class="text-left pl-2"><span class="profit-value">+10,600&emsp;〜&emsp;+12,600円</span></td>
-                            </tr>
-                            <tr class="border-b border-slate-100 text-blue-600 font-black text-center">
-                                <td class="border-r text-slate-800 font-bold">5名</td><td class="border-r text-slate-800">20,000円</td>
-                                <td class="text-left pl-2"><span class="profit-value">+14,600&emsp;〜&emsp;+16,600円</span></td>
+                            <!-- 省略行 -->
+                            <tr class="border-b border-slate-50 text-center">
+                                <td colspan="3" class="dot-line">︙</td>
                             </tr>
                             <tr class="bg-blue-50/30 text-blue-600 font-black text-center">
                                 <td class="border-r text-slate-800 font-bold">6名</td><td class="border-r text-slate-800">24,000円</td>
@@ -307,7 +311,7 @@
 
                 <div class="bg-light-blue p-2.5 rounded-lg border border-blue-100 text-[8.5px] leading-relaxed">
                     <p class="mb-0.5">・PR後想定来店数を基に2名の来店で黒字化となる想定で試算しております。</p>
-                    <p class="mb-0.5 text-slate-800">・謝礼1000円の場合、来店1名でコスト回収の想定です。</p>
+                    <p class="mb-0.5 text-slate-800">・有償PR1000円の場合、来店1名でコスト回収の想定です。</p>
                     <p>・想定上限の6名来店時は、投下コストに対し高い費用対効果が期待出来る見込みです。</p>
                 </div>
 
