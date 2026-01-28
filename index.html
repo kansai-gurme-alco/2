@@ -105,6 +105,28 @@
         h2 { font-size: 0.82rem !important; }
         .section-tag { width: 1.3rem; height: 1.3rem; font-size: 0.65rem; }
 
+        /* 中括弧（回転版）のデザイン */
+        .brace-container {
+            position: relative;
+            height: 14px;
+            width: 80%;
+            margin: 0 auto;
+            border-left: 2px solid #cbd5e1;
+            border-right: 2px solid #cbd5e1;
+            border-bottom: 2px solid #cbd5e1;
+            border-radius: 0 0 8px 8px;
+        }
+        .brace-point {
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 8px;
+            background-color: #cbd5e1;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        }
+
         @media print {
             body { background-color: white; }
             .slide-container { box-shadow: none; height: auto; overflow: visible; }
@@ -156,6 +178,13 @@
                     </div>
                 </div>
 
+                <!-- 合算を示すコネクタエリア -->
+                <div class="flex flex-col items-center -mt-1 mb-1">
+                    <div class="brace-container">
+                        <div class="brace-point"></div>
+                    </div>
+                </div>
+
                 <div class="bg-light-blue rounded-lg py-2 text-center border border-blue-100 my-1">
                     <p class="text-custom-blue font-bold text-[9px]">合計想定リーチ数</p>
                     <div class="text-2xl font-black text-custom-blue py-0.5">
@@ -163,19 +192,21 @@
                     </div>
                 </div>
 
-                <div class="text-[9px] text-slate-600 leading-tight px-1 mb-1">
-                    投稿を見た方のうち、「行ってみたい」と感じる層は約1〜3%、<br>
-                    実際に来店に至る割合は<span class="text-red-500 font-bold border-b border-red-200">約0.1〜0.3%</span>と想定。
+                <div class="text-[9px] px-1 mb-1">
+                    <p class="font-black text-slate-800 mb-1">■PR後 想定来店数の算出について</p>
+                    <p class="text-slate-600 leading-tight">
+                        投稿を見た方のうち、「行ってみたい」と感じる層は約1〜3%、<br>
+                        実際に来店に至る割合は<span class="text-red-500 font-bold border-b border-red-200">約0.1〜0.3%</span>と想定。
+                    </p>
+                    <div class="mt-2 space-y-0.5">
+                        <p class="text-[8px] text-slate-500 font-bold leading-tight">※SNSマーケティングの一般的指標（閲覧→興味→行動）を参考に算出しております。</p>
+                        <p class="text-[8px] text-slate-500 font-bold leading-tight">※リーチ数がご不安な際は詳細データを提出いたします。</p>
+                    </div>
                 </div>
 
-                <div class="border-2 border-red-50 rounded-lg py-2.5 text-center bg-light-red">
+                <div class="border-2 border-red-50 rounded-lg py-2.5 text-center bg-light-red mb-4">
                     <p class="text-[10px] font-bold text-orange-900">PR後 想定来店数</p>
                     <div class="text-3xl font-black text-red-500 leading-none mt-1">2〜6 <span class="text-lg">名</span></div>
-                </div>
-
-                <div class="space-y-0.5 px-1 mt-1">
-                    <p class="text-[8px] text-slate-500 font-bold leading-tight">※SNSマーケティングの一般的指標（閲覧→興味→行動）を参考に算出。</p>
-                    <p class="text-[8px] text-slate-500 font-bold leading-tight">※リーチ数がご不安な際は詳細データを提出いたします。</p>
                 </div>
             </div>
 
@@ -261,8 +292,8 @@
 
                 <div class="bg-light-blue p-2.5 rounded-lg border border-blue-100 text-[8.5px] leading-relaxed">
                     <p class="mb-0.5">・PR後想定来店数を基に2名の来店で黒字化となる想定で試算しております。</p>
-                    <p class="mb-0.5">・謝礼1000円の場合、来店1名でコスト回収の想定です。</p>
-                    <p class="mb-0.5">・想定上限の6名来店時は、投下コストに対し高い費用対効果が期待出来る見込みです。</p>
+                    <p class="mb-0.5 text-slate-800">・謝礼1000円の場合、来店1名でコスト回収の想定です。</p>
+                    <p>・想定上限の6名来店時は、投下コストに対し高い費用対効果が期待出来る見込みです。</p>
                 </div>
 
                 <div class="closing-text">
