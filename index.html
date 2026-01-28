@@ -3,168 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>店舗向けご提案資料</title>
+    <title>店舗向けご提案資料 - 16:9 最終完成版</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; background-color: #f3f4f6; }
-        .bg-custom-blue { background-color: #1a365d; }
-        .text-custom-blue { color: #1a365d; }
-        .border-custom-blue { border-color: #1a365d; }
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            background-color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .slide-container {
+            width: 95vw;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+            background-color: white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #cbd5e1;
+        }
+        .bg-custom-blue { background-color: #1e3a8a; }
+        .text-custom-blue { color: #1e3a8a; }
         .bg-light-blue { background-color: #f0f7ff; }
-        .bg-light-red { background-color: #fff5f5; }
+        .bg-light-red { background-color: #fff8f8; }
+        
+        .profit-value {
+            display: inline-block;
+            white-space: nowrap;
+            min-width: 180px; 
+            text-align: left;
+        }
+
+        .simulation-table td {
+            padding-top: 0.35rem;
+            padding-bottom: 0.35rem;
+        }
+
+        /* 挨拶文のはみ出し防止 */
+        .closing-text {
+            font-size: 1.125rem;
+            font-weight: 900;
+            color: #1e293b;
+            text-align: center;
+            letter-spacing: 0.05em;
+            width: 100%;
+            margin-top: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .slide-container { aspect-ratio: auto; min-height: auto; }
+        }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body>
 
-    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden border border-gray-200">
-        
-        <header class="bg-custom-blue text-white p-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i class="fas fa-file-invoice-dollar text-2xl"></i>
-                <h1 class="text-xl font-bold tracking-wider">店舗様向け ご提案資料</h1>
+    <div class="slide-container">
+        <header class="bg-custom-blue text-white py-3 px-6 flex justify-between items-center shadow-md">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-file-invoice-dollar text-xl"></i>
+                <h1 class="text-xl font-black tracking-tight">店舗様向け ご提案資料</h1>
             </div>
-            <span class="text-sm">SNS PR施策のご提案</span>
+            <span class="text-xs font-medium opacity-80">SNS PR施策のご提案</span>
         </header>
 
-        <div class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="flex-1 p-5 grid grid-cols-2 gap-8 overflow-hidden">
             
-            <section class="space-y-6">
-                <div class="flex items-center gap-3 border-b-2 border-custom-blue pb-2">
-                    <span class="bg-custom-blue text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">01</span>
-                    <h2 class="text-xl font-bold text-custom-blue">前提データ（現在）</h2>
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 border-b-4 border-custom-blue pb-1">
+                    <span class="bg-custom-blue text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">01</span>
+                    <h2 class="text-lg font-bold text-custom-blue">前提データ（現在）</h2>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="border rounded-xl p-4 bg-white shadow-sm">
-                        <div class="flex items-center gap-2 mb-2 text-pink-600">
-                            <i class="fab fa-instagram text-xl"></i>
-                            <span class="font-bold">Instagram</span>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="border rounded-xl p-3 bg-white shadow-sm border-slate-100">
+                        <div class="flex items-center gap-2 mb-1 text-pink-600">
+                            <i class="fab fa-instagram text-lg"></i>
+                            <span class="font-bold text-sm">Instagram</span>
                         </div>
-                        <p class="text-xs text-gray-500">フォロワー：約1,000人</p>
-                        <p class="text-xs font-bold mt-2">1投稿リーチ：</p>
-                        <p class="text-xl font-black italic">500〜1,000</p>
+                        <p class="text-[10px] text-slate-500">フォロワー：約1,000人</p>
+                        <p class="text-[10px] font-bold text-slate-700 mt-2">1投稿リーチ：</p>
+                        <p class="text-xl font-black text-slate-800">500〜1,000</p>
+                        <p class="text-[9px] text-slate-400">※投稿後10日目で測定</p>
                     </div>
-                    <div class="border rounded-xl p-4 bg-white shadow-sm">
-                        <div class="flex items-center gap-2 mb-2 text-black">
-                            <i class="fab fa-tiktok text-xl"></i>
-                            <span class="font-bold">TikTok</span>
+                    <div class="border rounded-xl p-3 bg-white shadow-sm border-slate-100">
+                        <div class="flex items-center gap-2 mb-1 text-slate-900">
+                            <i class="fab fa-tiktok text-lg"></i>
+                            <span class="font-bold text-sm">TikTok</span>
                         </div>
-                        <p class="text-xs text-gray-500">フォロワー：約50人</p>
-                        <p class="text-xs font-bold mt-2">1投稿リーチ：</p>
-                        <p class="text-xl font-black italic">1,000以上</p>
+                        <p class="text-[10px] text-slate-500">フォロワー：約50人</p>
+                        <p class="text-[10px] font-bold text-slate-700 mt-2">1投稿リーチ：</p>
+                        <p class="text-xl font-black text-slate-800">1,000以上</p>
+                        <p class="text-[9px] text-slate-400">※投稿後10日目で測定</p>
                     </div>
                 </div>
 
-                <div class="bg-light-blue rounded-xl p-6 text-center border border-blue-100">
-                    <p class="text-custom-blue font-bold mb-2">合計想定リーチ数</p>
-                    <div class="text-4xl font-black text-custom-blue italic">
-                        1,500〜2,000 <span class="text-lg italic ml-1">人</span>
+                <div class="bg-light-blue rounded-xl py-3 px-4 text-center border border-blue-100 shadow-sm">
+                    <p class="text-custom-blue font-bold text-base">合計想定リーチ数</p>
+                    <div class="text-4xl font-black text-custom-blue leading-none py-1">
+                        1,500〜2,000 <span class="text-lg">人</span>
                     </div>
                 </div>
 
-                <div class="text-xs text-gray-600 leading-relaxed px-2">
+                <div class="text-[11px] text-slate-600 leading-snug px-1">
                     投稿を見た方のうち、「行ってみたい」と感じる層は約1〜3%、<br>
-                    実際に来店に至る割合は<span class="text-red-500 font-bold underline">約0.1〜0.3%</span>と想定しています。
+                    実際に来店に至る割合は<span class="text-red-500 font-bold border-b border-red-200">約0.1〜0.3%</span>と想定。
                 </div>
 
-                <div class="border-2 border-red-100 rounded-xl p-6 text-center bg-white relative">
-                    <p class="text-sm font-bold text-orange-800">想定新規来店数</p>
-                    <div class="text-5xl font-black text-red-500 italic mt-1">
-                        2〜6 <span class="text-2xl ml-1">名</span>
-                    </div>
+                <div class="border-2 border-red-50 rounded-xl py-4 text-center bg-white shadow-inner">
+                    <p class="text-lg font-bold text-orange-900">PR後 想定来店数</p>
+                    <div class="text-5xl font-black text-red-500 leading-tight">2〜6 <span class="text-2xl">名</span></div>
                 </div>
-                
-                <p class="text-[10px] text-gray-400">
-                    ※SNSマーケティングの一般的指標（閲覧→興味→行動）を参考に算出。<br>
-                    ※リーチ数がご不安な際は詳細データを提出いたします。
-                </p>
-            </section>
 
-            <div class="space-y-8">
+                <div class="space-y-1 px-1">
+                    <p class="text-[10px] text-slate-500 font-bold leading-tight">※SNSマーケティングの一般的指標（閲覧→興味→行動）を参考に算出。</p>
+                    <p class="text-[10px] text-slate-500 font-bold leading-tight">※リーチ数がご不安な際は詳細データを提出いたします。</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
                 
-                <section class="space-y-4">
-                    <div class="flex items-center gap-3 border-b-2 border-custom-blue pb-2">
-                        <span class="bg-custom-blue text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">02</span>
-                        <h2 class="text-xl font-bold text-custom-blue">店舗側コスト</h2>
+                <section class="space-y-3">
+                    <div class="flex items-center gap-2 border-b-4 border-custom-blue pb-1">
+                        <span class="bg-custom-blue text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">02</span>
+                        <h2 class="text-lg font-bold text-custom-blue">店舗側コスト</h2>
                     </div>
-                    
-                    <div class="grid grid-cols-2 gap-4 text-sm px-2">
-                        <div class="space-y-3">
-                            <p class="flex items-center gap-2"><i class="fas fa-check text-custom-blue"></i> PR訪問人数：2名（同伴1名）</p>
-                            <p class="flex items-center gap-2"><i class="fas fa-check text-custom-blue"></i> 謝礼金額：2,000〜5,000円</p>
-                            <p class="flex items-center gap-2"><i class="fas fa-check text-custom-blue"></i> 原価想定：1,200円/人</p>
-                            <p class="text-[10px] text-gray-400 ml-6">（客単価4,000円 原価30%試算）</p>
+                    <div class="flex justify-between text-[12px] px-1">
+                        <div class="space-y-2 text-slate-700 font-medium">
+                            <p><i class="fas fa-check text-custom-blue mr-1"></i> PR訪問人数：2名（同伴1名希望）</p>
+                            <p><i class="fas fa-check text-custom-blue mr-1"></i> 謝礼金額：2,000〜5,000円（ご相談）</p>
+                            <p><i class="fas fa-check text-custom-blue mr-1"></i> 原価想定：1,200円/人 <span class="text-[9px] text-slate-400 ml-1">※客単価4,000円 原価30%</span></p>
                         </div>
-                        <div class="text-right space-y-3">
-                            <p>原価負担(2名) <span class="ml-4 font-mono">2,400円</span></p>
-                            <p>有償PR謝礼 <span class="ml-4 font-mono text-red-500 font-bold">2,000〜5,000円</span></p>
+                        <div class="text-right space-y-2 text-slate-800">
+                            <p class="flex justify-between w-40"><span>原価負担(2名)</span> <span>2,400円</span></p>
+                            <p class="flex justify-between w-40"><span>有償PR謝礼</span> <span class="text-red-500 font-bold">2,000〜5,000円</span></p>
                         </div>
                     </div>
-
-                    <div class="bg-light-red rounded-xl p-4 flex justify-between items-center border border-red-100">
-                        <span class="text-lg font-bold text-gray-700 italic">総コスト</span>
-                        <span class="text-3xl font-black text-red-500 italic">4,400〜7,400円</span>
+                    <div class="bg-light-red rounded-xl p-3 flex justify-between items-center border border-red-100 shadow-sm">
+                        <span class="text-base font-black text-slate-800">総コスト</span>
+                        <span class="text-2xl font-black text-red-500">4,400〜7,400円</span>
                     </div>
                 </section>
 
-                <section class="space-y-4">
-                    <div class="flex items-center gap-3 border-b-2 border-custom-blue pb-2">
-                        <span class="bg-custom-blue text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">03</span>
-                        <h2 class="text-xl font-bold text-custom-blue italic">PR後の来店・売上シミュレーション</h2>
-                        <span class="text-[10px] text-gray-400 font-normal ml-auto">（客単価4,000円試算）</span>
+                <section class="space-y-3 flex-1 flex flex-col overflow-hidden">
+                    <div class="flex items-center gap-2 border-b-4 border-custom-blue pb-1">
+                        <span class="bg-custom-blue text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-sm">03</span>
+                        <h2 class="text-lg font-bold text-custom-blue">PR後の来店・売上シミュレーション</h2>
                     </div>
 
-                    <div class="flex flex-col md:flex-row gap-4">
-                        <div class="flex-grow overflow-hidden rounded-lg">
-                            <table class="w-full text-center text-sm border-collapse">
-                                <thead class="bg-custom-blue text-white">
-                                    <tr>
-                                        <th class="py-2 border-r border-blue-800">来店人数</th>
-                                        <th class="py-2 border-r border-blue-800">売上</th>
-                                        <th class="py-2">売上 - 総コスト = 利益</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white">
-                                    <tr class="border-b">
-                                        <td class="py-2 font-bold border-r">2名</td>
-                                        <td class="py-2 border-r">8,000円</td>
-                                        <td class="py-2 text-blue-600 font-bold bg-blue-50">+600〜+3,600円 <span class="text-[10px] font-normal border border-blue-400 px-1 rounded">回収</span></td>
-                                    </tr>
-                                    <tr class="border-b">
-                                        <td class="py-2 font-bold border-r">3名</td>
-                                        <td class="py-2 border-r">12,000円</td>
-                                        <td class="py-2 text-red-500 font-bold">+4,600〜+7,600円</td>
-                                    </tr>
-                                    <tr class="border-b">
-                                        <td class="py-2 font-bold border-r">4名</td>
-                                        <td class="py-2 border-r">16,000円</td>
-                                        <td class="py-2 text-red-500 font-bold">+8,600〜+11,600円</td>
-                                    </tr>
-                                    <tr class="border-b">
-                                        <td class="py-2 font-bold border-r">5名</td>
-                                        <td class="py-2 border-r">20,000円</td>
-                                        <td class="py-2 text-red-500 font-bold">+12,600〜+15,600円</td>
-                                    </tr>
-                                    <tr class="">
-                                        <td class="py-2 font-bold border-r">6名</td>
-                                        <td class="py-2 border-r">24,000円</td>
-                                        <td class="py-2 text-red-500 font-bold">+16,600〜+19,600円</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="overflow-hidden rounded-lg border border-slate-200">
+                        <table class="w-full text-[12px] simulation-table">
+                            <thead class="bg-custom-blue text-white text-center">
+                                <tr class="h-8">
+                                    <th class="border-r border-blue-800 w-[20%]">来店人数</th>
+                                    <th class="border-r border-blue-800 w-[20%]">売上</th>
+                                    <th>利益（売上 - 総コスト）</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white">
+                                <tr class="border-b border-slate-100">
+                                    <td class="text-center font-bold border-r">2名</td>
+                                    <td class="text-center border-r">8,000円</td>
+                                    <td class="pl-6">
+                                        <span class="profit-value font-bold text-slate-800 text-[13px]">+600&emsp;〜&emsp;+3,600円</span>
+                                        <span class="text-[9px] border border-slate-800 px-1 py-0.5 rounded ml-2 font-bold inline-block align-middle">回収ライン</span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-100 text-blue-600 font-black">
+                                    <td class="text-center border-r text-slate-800 font-bold">3名</td><td class="text-center border-r text-slate-800 font-medium">12,000円</td>
+                                    <td class="pl-6"><span class="profit-value text-[13px]">+4,600&emsp;〜&emsp;+7,600円</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100 text-blue-600 font-black">
+                                    <td class="text-center border-r text-slate-800 font-bold">4名</td><td class="text-center border-r text-slate-800 font-medium">16,000円</td>
+                                    <td class="pl-6"><span class="profit-value text-[13px]">+8,600&emsp;〜&emsp;+11,600円</span></td>
+                                </tr>
+                                <tr class="border-b border-slate-100 text-blue-600 font-black">
+                                    <td class="text-center border-r text-slate-800 font-bold">5名</td><td class="text-center border-r text-slate-800 font-medium">20,000円</td>
+                                    <td class="pl-6"><span class="profit-value text-[13px]">+12,600&emsp;〜&emsp;+15,600円</span></td>
+                                </tr>
+                                <tr class="bg-blue-50/30 text-blue-600 font-black">
+                                    <td class="text-center border-r text-slate-800 font-bold">6名</td><td class="text-center border-r text-slate-800 font-medium">24,000円</td>
+                                    <td class="pl-6"><span class="profit-value text-[13px]">+16,600&emsp;〜&emsp;+19,600円</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        <div class="bg-light-blue p-4 rounded-xl border border-blue-100 md:w-48 text-xs leading-relaxed">
-                            <p class="mb-2"><span class="font-bold text-custom-blue">2名来店</span>でコスト回収ラインに到達します。</p>
-                            <p>想定上限の<span class="text-red-500 font-bold">5〜6名来店時</span>には、投下コストに対して高い費用対効果が期待できます。</p>
-                        </div>
+                    <div class="bg-light-blue p-2.5 rounded-xl border border-blue-100 text-[10px] leading-relaxed shadow-sm">
+                        <p class="mb-0.5">・左ページのPR後想定来店数を基に2名の来店でコストを回収、黒字化となる想定で試算しております。</p>
+                        <p>・想定上限の6名来店時は、投下コストに対し高い費用対効果が期待出来る見込みです。</p>
+                    </div>
+
+                    <div class="closing-text">
+                        何卒、ご検討のほどよろしくお願い申し上げます。
                     </div>
                 </section>
-
             </div>
         </div>
     </div>
-
 </body>
 </html>
